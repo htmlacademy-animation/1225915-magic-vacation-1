@@ -7,7 +7,7 @@
   overflow: hidden;
 
   &--hidden {
-    display: none;
+    visibility: hidden;
   }
 
   @media (max-width: $tablet) and (orientation: portrait) {
@@ -16,6 +16,15 @@
 
   @media (max-width: $tablet - 1) and (orientation: landscape) {
     height: 100vh;
+  }
+}
+
+.screen--intro {
+  &.active {
+    .intro__message {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
