@@ -28,6 +28,26 @@
   }
 }
 
+.screen--story {
+  &.active {
+    .swiper-slide-active {
+      & .slider__item-text {
+        opacity: 1;
+        transform: translateX(0);
+        transition: all 0.6s ease 0.3s;
+      }
+    }
+
+    .swiper-slide-next {
+      & .slider__item-text {
+        opacity: 1;
+        transform: translateX(0);
+        transition: all 0.6s ease 0.6s;
+      }
+    }
+  }
+}
+
 .screen__wrapper {
   @include container;
   position: relative;
