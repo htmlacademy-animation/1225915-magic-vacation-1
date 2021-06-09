@@ -7,6 +7,26 @@
       pointer-events: auto;
     }
   }
+
+  &--active {
+    & .social-block__link {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.3s ease;
+
+      &--fb {
+        transition-delay: 100ms;
+      }
+
+      &--insta {
+        transition-delay: 150ms;
+      }
+
+      &--vk {
+        transition-delay: 200ms;
+      }
+    }
+  }
 }
 
 .social-block__toggler {
@@ -35,6 +55,7 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+    transition: all 0.3s ease;
   }
 
   svg {
@@ -168,6 +189,8 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+  opacity: 0;
+  transform: translateY(-1.5rem);
 
   @media (min-width: $stop-scaling) {
     width: 40px;
