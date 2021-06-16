@@ -48,6 +48,16 @@
   }
 }
 
+.screen--game {
+  &.active {
+    .form__field {
+      padding: 0 5.6rem;
+      width: calc(100% - 21rem);
+      transition: all 0.5s ease-in;
+    }
+  }
+}
+
 .screen__wrapper {
   @include container;
   position: relative;
