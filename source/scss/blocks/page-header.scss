@@ -247,11 +247,14 @@
       content: "";
       position: absolute;
       bottom: 0;
-      width: 0;
+      width: 100%;
       height: 2px;
       background-color: $c-light;
-      right: 0;
-      transition: all 0.3s ease;
+      left: 0;
+      transform: scaleX(0);
+      transform-origin: right top;
+      will-change: transform;
+      transition: background-color 0.3s ease-out, transform 0.3s ease-out;
 
       @media (max-width: $tablet) and (orientation: portrait) {
         left: 0;
@@ -268,7 +271,8 @@
 
     &.active {
       &::after {
-        width: 100%;
+        transform: scaleX(1);
+        transform-origin: left top;
         display: block;
       }
     }
@@ -279,8 +283,8 @@
       outline: none;
 
       &::after {
-        left: 0;
-        width: 100%;
+        transform: scaleX(1);
+        transform-origin: left top;
         background-color: $c-purple;
       }
     }
