@@ -241,6 +241,7 @@
     display: block;
     color: inherit;
     padding: 0 0.5em 0.5em;
+    transition: color 0.3s ease;
 
     &::after {
       content: "";
@@ -249,8 +250,11 @@
       width: 100%;
       height: 2px;
       background-color: $c-light;
-      display: none;
       left: 0;
+      transform: scaleX(0);
+      transform-origin: right top;
+      will-change: transform;
+      transition: background-color 0.3s ease-out, transform 0.3s ease-out;
 
       @media (max-width: $tablet) and (orientation: portrait) {
         left: 0;
@@ -267,6 +271,8 @@
 
     &.active {
       &::after {
+        transform: scaleX(1);
+        transform-origin: left top;
         display: block;
       }
     }
@@ -277,7 +283,8 @@
       outline: none;
 
       &::after {
-        opacity: 1;
+        transform: scaleX(1);
+        transform-origin: left top;
         background-color: $c-purple;
       }
     }
