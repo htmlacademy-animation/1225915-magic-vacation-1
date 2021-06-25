@@ -1,0 +1,20 @@
+body {
+  &.loaded {
+    .social-block__toggler::before {
+      transform: scale(1);
+    }
+
+    .page-header__logo {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .page-header__menu {
+      opacity: 1;
+    }
+
+    .screen__footer {
+      transform: translateY(0);
+    }
+  }
+}
