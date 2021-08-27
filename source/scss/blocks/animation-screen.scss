@@ -22,3 +22,20 @@
     }
   }
 }
+
+.prizes-transition-bg {
+  width: 100%;
+  height: 0;
+  background-color: $c-dark;
+  position: fixed;
+  bottom: 0;
+  transition: height 0.3s ease;
+  z-index: 2;
+  opacity: 0;
+
+  .screen--story.has-transition~& {
+    height: 100%;
+    z-index: 1;
+    opacity: 1;
+  }
+}
