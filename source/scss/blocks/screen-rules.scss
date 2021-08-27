@@ -59,7 +59,7 @@
   }
 
   &.active {
-    @for $i from 0 through 3 {
+    @for $i from 1 through 4 {
       .rules__item:nth-child(#{$i}) {
         &::before {
           opacity: 0;
