@@ -9,6 +9,7 @@ import form from './modules/form.js';
 import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
 import onLoadBody from './modules/on-load-body';
+import prizesTransitionBg from './modules/prizes-transition-bg';
 
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
@@ -23,3 +24,4 @@ result();
 form();
 social();
 onLoadBody();
+prizesTransitionBg();
