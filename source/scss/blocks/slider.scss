@@ -136,6 +136,7 @@
   justify-content: space-between;
   width: 17rem;
   z-index: 1;
+  opacity: 0;
 
   @media (min-width: $stop-scaling) {
     bottom: 28px;
@@ -151,12 +152,23 @@
   }
 }
 
+.screen.active .slider__controls {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+
 .slider__control {
   @include btn-reset;
   position: relative;
   width: 4rem;
   height: 4rem;
   color: $c-dark;
+  transition: transform 0.4s ease-in;
+  transform: translateX(-160%) rotate(-120deg);
+
+  + .slider__control {
+    transform: translateX(160%) rotate(120deg);
+  }
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -223,6 +235,14 @@
   }
 }
 
+.screen.active .slider__control {
+  transform: translateX(0%) rotate(0deg);
+
+  + .slider__control {
+    transform: translateX(0%) rotate(0deg);
+  }
+}
+
 .slider__pagination.swiper-pagination {
   position: absolute;
   bottom: 2.8rem;
@@ -275,6 +295,63 @@
       width: 0.4rem;
       height: 0.4rem;
       background-color: $c-light;
+    }
+  }
+}
+
+.theme1 .slider__control {
+  color: $c-lp-bg;
+
+  &:hover { color: $c-lp-hover; }
+
+  &:focus {
+    color: $c-lp-hover;
+    &::before { border-color: $c-lp-hover; }
+  }
+
+  &:active,
+  &:active:focus {
+    &::before {
+      background-color: $c-lp-hover;
+      border-color: $c-lp-hover;
+    }
+  }
+}
+
+.theme2 .slider__control {
+  color: $c-b-bg;
+
+  &:hover { color: $c-b-hover; }
+
+  &:focus {
+    color: $c-b-hover;
+    &::before { border-color: $c-b-hover; }
+  }
+
+  &:active,
+  &:active:focus {
+    &::before {
+      background-color: $c-b-hover;
+      border-color: $c-b-hover;
+    }
+  }
+}
+
+.theme3 .slider__control {
+  color: $c-lb-bg;
+
+  &:hover { color: $c-lb-hover; }
+
+  &:focus {
+    color: $c-lb-hover;
+    &::before { border-color: $c-lb-hover; }
+  }
+
+  &:active,
+  &:active:focus {
+    &::before {
+      background-color: $c-lb-hover;
+      border-color: $c-lb-hover;
     }
   }
 }

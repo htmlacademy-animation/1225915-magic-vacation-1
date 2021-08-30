@@ -39,9 +39,11 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
+  transition: opacity 0.05s ease 0.2s, color 0.3s ease 0s;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
+    transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease 0s, background-color 0.3s ease 0s;
   }
 
   @media (max-width: $mobile) and (orientation: landscape) {
@@ -269,4 +271,97 @@
       }
     }
   }
+}
+
+.theming.theme1 .social-block__toggler {
+  color: $c-lp-bg;
+}
+
+.theming.theme1 .social-block__toggler:hover,
+.theming.theme1 .social-block--active .social-block__toggler,
+.theming.theme1 .social-block__toggler:focus,
+.theming.theme1 .social-block__toggler:active,
+.theming.theme1 .social-block__toggler:active:focus {
+  color: $c-lp-hover;
+}
+
+.theming.theme1 .social-block__toggler:focus::before {
+  border-color: $c-lp-hover;
+}
+
+.theming.theme1 .social-block__toggler:active::before,
+.theming.theme1 .social-block__toggler:active:focus::before {
+  border-color: $c-lp-hover;
+  background-color: $c-lp-hover;
+}
+
+.theming.theme2 .social-block__toggler {
+  color: $c-b-bg;
+}
+
+.theming.theme2 .social-block__toggler:hover,
+.theming.theme2 .social-block--active .social-block__toggler,
+.theming.theme2 .social-block__toggler:focus,
+.theming.theme2 .social-block__toggler:active,
+.theming.theme2 .social-block__toggler:active:focus {
+  color: $c-b-hover;
+}
+
+.theming.theme2 .social-block__toggler:focus::before {
+  border-color: $c-b-hover;
+}
+
+.theming.theme2 .social-block__toggler:active::before,
+.theming.theme2 .social-block__toggler:active:focus::before {
+  border-color: $c-b-hover;
+  background-color: $c-b-hover;
+}
+
+.theming.theme3 .social-block__toggler {
+  color: $c-lb-bg;
+}
+
+.theming.theme3 .social-block__toggler:hover,
+.theming.theme3 .social-block--active .social-block__toggler,
+.theming.theme3 .social-block__toggler:focus,
+.theming.theme3 .social-block__toggler:active,
+.theming.theme3 .social-block__toggler:active:focus {
+  color: $c-lb-hover;
+}
+
+.theming.theme3 .social-block__toggler:focus::before {
+  border-color: $c-lb-hover;
+}
+
+.theming.theme3 .social-block__toggler:active::before,
+.theming.theme3 .social-block__toggler:active:focus::before {
+  border-color: $c-lb-hover;
+  background-color: $c-lb-hover;
+}
+
+.theming.theme1 .social-block__link {
+  &:hover { color: $c-lp-hover; }
+
+  &:focus { color: $c-lp-hover; border-color: $c-lp-hover; }
+
+  &:active,
+  &:active:focus { color: $c-lp-hover; }
+}
+
+.theming.theme2 .social-block__link {
+  &:hover { color: $c-b-hover; }
+
+  &:focus { color: $c-b-hover; border-color: $c-b-hover; }
+
+  &:active,
+  &:active:focus { color: $c-b-hover; }
+}
+
+.theming.theme3 .social-block__link {
+  &:hover { color: $c-lb-hover; }
+
+  &:focus { color: $c-lb-hover; border-color: $c-lb-hover; }
+
+  &:active,
+  &:active:focus { color: $c-lb-hover; }
 }
