@@ -1,0 +1,176 @@
+.leaf1 {
+  position: absolute;
+  bottom: 27.5vh;
+  left: 50%;
+  transform-origin: -5% 75%;
+  display: block;
+  height: 34.2vh;
+  opacity: 0;
+}
+
+.leaf2 {
+  position: absolute;
+  bottom: 17vh;
+  right: 50%;
+  margin-right: 9vh;
+  transform-origin: 106% 43%;
+  display: block;
+  height: 31.7vh;
+  opacity: 0;
+}
+
+.leaf_green {
+  position: absolute;
+  bottom: 23.5vh;
+  left: 50%;
+  margin-left: -5vh;
+  transform-origin: -2% 80%;
+  display: block;
+  height: 21vh;
+  opacity: 0;
+}
+
+.suitcase {
+  position: absolute;
+  bottom: 17vh;
+  left: 50%;
+  margin-left: -27vh;
+  transform-origin: 50% 77%;
+  display: block;
+  height: 45vh;
+}
+
+.flamingo {
+  position: absolute;
+  bottom: 17.5vh;
+  left: 50%;
+  margin-left: -31.5vh;
+  transform-origin: 53% 59%;
+
+  img {
+    display: block;
+    height: 34vh;
+    transform-origin: 53% 59%;
+  }
+}
+
+@keyframes leaf1 {
+  0% { transform: rotate(-56.76deg); }
+  21% { transform: rotate(10deg); }
+  37% { transform: rotate(-5deg); }
+  53% { transform: rotate(2.5deg); }
+  69% { transform: rotate(-1.25deg); }
+  84% { transform: rotate(0.5deg); }
+  99% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes leaf2 {
+  0% { transform: rotate(74.37deg); }
+  24% { transform: rotate(-10deg); }
+  39% { transform: rotate(5deg); }
+  54% { transform: rotate(-2.5deg); }
+  69% { transform: rotate(1.5deg); }
+  83% { transform: rotate(-0.6deg); }
+  97% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes leaf_green {
+  0% { transform: rotate(-56.76deg); }
+  24% { transform: rotate(10deg); }
+  39% { transform: rotate(-5deg); }
+  54% { transform: rotate(2.5deg); }
+  69% { transform: rotate(-1.25deg); }
+  83% { transform: rotate(0.5deg); }
+  97% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes leaf_img {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes suitcase {
+  0% { transform: translate(-2.4vh, -10.6vh) scale(0); }
+  61% { transform: translate(0.5vh, 0.1vh) scale(1.03); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes flamingo_appearance {
+  0% { transform: translate(-0.5vh, 16vh) rotate(-25deg); opacity: 0; }
+  100% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+}
+
+@keyframes flamingo_routine {
+  0% { transform: translate(0, -1vh); }
+  50% { transform: translate(0, 1vh); }
+  100% { transform: translate(0, -1vh); }
+}
+
+@keyframes flamingo_routine_rotate {
+  0% { transform: rotate(0deg); }
+  51% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.screen--show .leaf1 {
+  animation: leaf1 2.234s cubic-bezier(0.33, 0, 0.67, 1) 0s forwards, leaf_img 0.267s cubic-bezier(0.33, 0, 0.67, 1) 0.2s forwards;
+}
+
+.screen--show .leaf2 {
+  animation: leaf2 2.334s cubic-bezier(0.33, 0, 0.67, 1) 0s forwards, leaf_img 0.367s cubic-bezier(0.33, 0, 0.67, 1) 0.2s forwards;;
+}
+
+.screen--show .leaf_green {
+  animation: leaf_green 2.333s cubic-bezier(0.33, 0, 0.67, 1) 0s forwards, leaf_img 0.267s cubic-bezier(0.33, 0, 0.67, 1) 0.3s forwards;
+}
+
+.screen--show .suitcase {
+  animation: suitcase 0.434s cubic-bezier(0.33, 0, 0.67, 1) 0s forwards;
+}
+
+.screen--show .flamingo {
+  animation: flamingo_appearance 0.333s cubic-bezier(0.33, 0, 0.67, 1) 0s, flamingo_routine_rotate 2.333s cubic-bezier(0.33, 0, 0.67, 1) 0.333s infinite;
+}
+
+.screen--show .flamingo img {
+  animation: flamingo_routine 2.333s cubic-bezier(0.33, 0, 0.67, 1) 0.166s infinite;
+}
+
+#result2 .form__button {
+  opacity: 0;
+  transition: opacity 0.2s ease-in 0.5s;
+
+  & > span {
+    opacity: 0;
+    transition: opacity 0.4s ease-in 0.7s;
+  }
+}
+
+.screen--show#result2 .form__button{
+  opacity: 1;
+
+  & > span {
+    opacity: 1;
+  }
+}
+
+#result2 .form__field{
+  transition: width 0.3s ease-in;
+  width: 6rem;
+
+  &::placeholder {
+    color: transparent;
+    transition: color 0.3s ease-in 0.28s;
+  }
+}
+
+.screen--show#result2 .form__field{
+  width: calc(100% - 31rem);
+
+  &::placeholder {
+    color: unset;
+  }
+}

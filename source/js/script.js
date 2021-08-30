@@ -10,6 +10,7 @@ import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
 import onLoadBody from './modules/on-load-body';
 import prizesTransitionBg from './modules/prizes-transition-bg';
+import TextAnimation from './modules/text-animation.js';
 
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
@@ -25,3 +26,8 @@ form();
 social();
 onLoadBody();
 prizesTransitionBg();
+
+// eslint-disable-next-line no-new
+new TextAnimation(`.animate-text`, 400);
+// eslint-disable-next-line no-new
+new TextAnimation(`.intro__date`, 400, 550);
