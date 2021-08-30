@@ -2,6 +2,7 @@ import Swiper from "swiper";
 
 export default () => {
   let storySlider;
+  let bodyEl = document.getElementsByTagName(`body`)[0];
   let sliderContainer = document.getElementById(`story`);
   sliderContainer.style.backgroundImage = `url("img/slide1.jpg"), linear-gradient(180deg, rgba(83, 65, 118, 0) 0%, #523E75 16.85%)`;
 
@@ -53,12 +54,20 @@ export default () => {
           slideChange: () => {
             if (storySlider.activeIndex === 0) {
               sliderContainer.style.backgroundImage = `url("img/slide1.jpg")`;
+              bodyEl.classList.remove(`theme2`, `theme3`, `theme4`);
+              bodyEl.classList.add(`theme1`);
             } else if (storySlider.activeIndex === 2) {
               sliderContainer.style.backgroundImage = `url("img/slide2.jpg")`;
+              bodyEl.classList.remove(`theme1`, `theme3`, `theme4`);
+              bodyEl.classList.add(`theme2`);
             } else if (storySlider.activeIndex === 4) {
               sliderContainer.style.backgroundImage = `url("img/slide3.jpg")`;
+              bodyEl.classList.remove(`theme1`, `theme2`, `theme4`);
+              bodyEl.classList.add(`theme3`);
             } else if (storySlider.activeIndex === 6) {
               sliderContainer.style.backgroundImage = `url("img/slide4.jpg")`;
+              bodyEl.classList.remove(`theme2`, `theme3`, `theme4`);
+              bodyEl.classList.add(`theme4`);
             }
           },
           resize: () => {

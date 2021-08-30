@@ -315,3 +315,27 @@
     width: 100%;
   }
 }
+
+.theming.theme1 .page-header__menu a {
+  &:hover,
+  &:focus {
+    color: $c-lp-hover;
+    &::after { background-color: $c-lp-hover; }
+  }
+}
+
+.theming.theme2 .page-header__menu a {
+  &:hover,
+  &:focus {
+    color: $c-b-hover;
+    &::after { background-color: $c-b-hover; }
+  }
+}
+
+.theming.theme3 .page-header__menu a {
+  &:hover,
+  &:focus {
+    color: $c-lb-hover;
+    &::after { background-color: $c-lb-hover; }
+  }
+}

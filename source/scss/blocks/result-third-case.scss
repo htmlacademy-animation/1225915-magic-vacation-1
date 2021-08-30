@@ -1,0 +1,19 @@
+#result3 .result__button {
+  opacity: 0;
+  transition: opacity 0.3s linear 0s;
+}
+
+#result3 .result__button span {
+  opacity: 0;
+  transform: translateX(140%) rotate(140deg);
+}
+
+.screen--show#result3 .result__button {
+  opacity: 1;
+}
+
+.screen--show#result3 .result__button span {
+  transition: opacity 0.4s cubic-bezier(0.33, 0, 0.67, 1) 0s, transform 0.4s cubic-bezier(0.33, 0, 0.67, 1) 0s;
+  opacity: 1;
+  transform: translateX(0%) rotate(0deg);
+}

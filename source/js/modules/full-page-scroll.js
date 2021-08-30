@@ -8,6 +8,7 @@ export default class FullPageScroll {
 
     this.screenElements = document.querySelectorAll(`.screen:not(.screen--result)`);
     this.menuElements = document.querySelectorAll(`.page-header__menu .js-menu-link`);
+    this.bodyEl = document.getElementsByTagName(`body`)[0];
 
     this.activeScreen = 0;
     this.previousScreen = 0;
@@ -44,6 +45,12 @@ export default class FullPageScroll {
   }
 
   changeVisibilityDisplay() {
+    if (this.activeScreen === this.STORY_SCREEN_INDEX) {
+      this.bodyEl.classList.add(`theming`);
+    } else {
+      this.bodyEl.classList.remove(`theming`);
+    }
+
     if (this.previousScreen === this.STORY_SCREEN_INDEX && this.activeScreen === this.PRIZES_SCREEN_INDEX) {
       this.screenElements[this.previousScreen].classList.add(`has-transition`);
     } else {

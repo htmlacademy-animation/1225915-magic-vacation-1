@@ -77,6 +77,18 @@
   left: 0;
   right: 0;
   z-index: 1;
+  transform: translateY(100%);
+  opacity: 1;
+  transition: transform 0.2s cubic-bezier(.31,.52,.3,1.03) 0s;
+  background-color: $c-light;
+
+  @media (max-width: $tablet) and (orientation: portrait) {
+    background-color: transparent;
+  }
+
+  @media (max-width: $mobile) and (orientation: landscape) {
+    background-color: transparent;
+  }
 }
 
 .screen__footer {
@@ -87,28 +99,33 @@
   color: $c-dark;
   background-color: $c-light;
   z-index: 1;
+  opacity: 1;
   transform: translateY(3.5rem);
   transition: transform 0.6s $introTimingFunction;
 
   @media (max-width: $tablet) and (orientation: portrait) {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 100%;
+    height: 18rem;
+    transform: translate(calc(3.5rem - 100%), 14.5rem) !important;
+    transition: transform 0.2s ease 0.05s;
     border-radius: 0 3.6rem 0 0;
 
     &.screen__footer--full {
-      width: 100%;
-      height: 18rem;
+      transform: translate(0, 0) !important;
+      transition: transform 0.2s ease 0s;
     }
   }
 
   @media (max-width: $mobile) and (orientation: landscape) {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 100%;
+    height: 16rem;
+    transform: translate(calc(3.5rem - 100%), 12.5rem) !important;
+    transition: transform 0.2s ease 0.05s;
     border-radius: 0 3.6rem 0 0;
 
     &.screen__footer--full {
-      width: 100%;
-      height: 16rem;
+      transform: translate(0, 0) !important;
+      transition: transform 0.2s ease 0s;
     }
   }
 }
@@ -118,29 +135,84 @@
 
   @media (max-width: $tablet) and (orientation: portrait) {
     opacity: 0;
+    transition: opacity 0.05s ease 0s;
 
     .screen__footer--full & {
       opacity: 1;
+      transition: opacity 0.2s ease 0.2s;
     }
   }
 
   @media (max-width: $mobile) and (orientation: landscape) {
     opacity: 0;
+    transition: opacity 0.05s ease 0s;
 
     .screen__footer--full & {
       opacity: 1;
+      transition: opacity 0.2s ease 0.2s;
     }
   }
+}
+
+body.loaded .screen.active .screen__footer,
+body.loaded .screen.active .screen__disclaimer {
+  transform: translateY(0);
+}
+
+body.loaded .screen .screen__footer.hiding,
+body.loaded .screen .screen__disclaimer.hiding {
+  transform: translateY(100%);
+}
+
+body.loaded .screen .screen__footer.fading,
+body.loaded .screen .screen__disclaimer.fading {
+  transform: translateY(0);
+}
+
+body.loaded .screen .screen__footer.fading .screen__footer-wrapper,
+body.loaded .screen .screen__disclaimer.fading .disclaimer {
+  opacity: 0;
+  transition: opacity 0.2s ease 0s;
+}
+
+body.loaded .screen.active .screen__footer.fading-in,
+body.loaded .screen.active .screen__disclaimer.fading-in {
+  transform: translateY(0);
+  transition: transform 0s ease 0s;
+}
+
+body.loaded .screen .screen__footer.fading-in .screen__footer-wrapper,
+body.loaded .screen .screen__disclaimer.fading-in .disclaimer {
+  opacity: 0;
+  transition: opacity 0.2s ease 0s;
+}
+
+body.loaded .screen.active .screen__footer.fading-in .screen__footer-wrapper,
+body.loaded .screen.active .screen__disclaimer.fading-in .disclaimer {
+  opacity: 1;
+}
+
+body.footer_bg:before {
+  content: "Text";
+  padding: 0.9rem 0 0.7rem;
+  background: $c-light;
+  color: $c-light;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 1.2rem;
+  line-height: 1.2;
 }
 
 .screen__footer-enlarge {
   @include btn-reset;
   position: absolute;
-  bottom: 0;
-  left: 0;
+  top: 0;
+  right: 0;
   display: none;
-  width: 4rem;
-  height: 4rem;
+  width: 3.5rem;
+  height: 3.5rem;
   color: $c-dark;
   z-index: 1;
 
