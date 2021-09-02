@@ -169,23 +169,30 @@
     }
 
     .prizes__icon {
-      width: 18.8rem;
+      width: 26.8rem;
+      left: -11rem;
+      position: relative;
 
       @media (min-width: $stop-scaling) {
-        width: 188px;
+        left: -106px;
+        bottom: -14px;
+        width: 268px;
       }
 
       @media (max-width: $tablet) and (orientation: portrait) {
         margin-right: 1.3rem;
+        left: 0;
         width: 10.211rem;
       }
 
       @media (max-width: $tablet) and (orientation: landscape) {
-        width: 9.5rem;
+        width: 13rem;
+        left: -5rem;
       }
 
       @media (max-width: $mobile) and (orientation: landscape) {
         width: 7rem;
+        left: 0;
       }
     }
   }
