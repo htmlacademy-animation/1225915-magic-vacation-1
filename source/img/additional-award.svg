@@ -3,11 +3,11 @@
     <animate
       attributeName="opacity"
       values="1; 1; 0"
-      keyTimes="0 0.99 1"
+      keyTimes="0; 0.99; 1"
       keySplines="0 0.1 0.25 1; 0 0 0.8 1"
       calcMode="spline"
       dur="0.16s"
-      begin="0s"
+      begin="1s"
       fill="freeze"
       repeatCount="1"
       id="closedSuitcase"
@@ -21,11 +21,11 @@
     <path d="M277.62,269.66v9.75H266.89a5.72,5.72,0,0,1-5.71-5.73V258.06h4.88a11.61,11.61,0,0,1,11.56,11.61" fill="#a67ee5"/>
     <path d="M277.62,269.66v9.75H266.89a5.72,5.72,0,0,1-5.71-5.73V258.06h4.88A11.61,11.61,0,0,1,277.62,269.66Z" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"/>
   </g>
-  <g id="open_suitcase">
+  <g id="open_suitcase" opacity="0">
     <animate
       attributeName="opacity"
       values="0; 0; 1"
-      keyTimes="0 0.99 1"
+      keyTimes="0; 0.99; 1"
       keySplines="0 0.1 0.25 1; 0 0 0.8 1"
       calcMode="spline"
       dur="0.16s"
@@ -40,15 +40,15 @@
     <path d="M240.3,210.48H67.19a12,12,0,0,0-12,11.9V276a13,13,0,0,0,13,13h184V222.38A12,12,0,0,0,240.3,210.48Z" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"/>
     <path d="M70.24,289V225.49a15,15,0,0,1,15-15h0.5" fill="none" stroke="#fff" stroke-width="2"/>
   </g>
-  <g id="flowers" style="transform-origin: 50% 100%">
+  <g id="flowers" style="transform-origin: 50% 100%" opacity="0">
     <animate
       attributeName="opacity"
       values="0; 0; 1"
-      keyTimes="0 0.99 1"
+      keyTimes="0; 0.99; 1"
       keySplines="0 0.1 0.25 1; 0 0 0.8 1"
       calcMode="spline"
       dur="0.01s"
-      begin="closedSuitcase.begin"
+      begin="closedSuitcase.end"
       fill="freeze"
       repeatCount="1"
       id="opacityFlowers"
@@ -70,11 +70,11 @@
       <animate
         attributeName="opacity"
         values="0; 0; 1"
-        keyTimes="0 0.99 1"
+        keyTimes="0; 0.99; 1"
         keySplines="0 0.1 0.25 1; 0 0 0.8 1"
         calcMode="spline"
         dur="0.01s"
-        begin="closedSuitcase.begin"
+        begin="closedSuitcase.end"
         fill="freeze"
         repeatCount="1"
         id="opacityFlowersPath1"
@@ -97,11 +97,11 @@
       <animate
         attributeName="opacity"
         values="0; 0; 1"
-        keyTimes="0 0.99 1"
+        keyTimes="0; 0.99; 1"
         keySplines="0 0.1 0.25 1; 0 0 0.8 1"
         calcMode="spline"
         dur="0.01s"
-        begin="closedSuitcase.begin"
+        begin="closedSuitcase.end"
         fill="freeze"
         repeatCount="1"
         id="opacityFlowersPath2"
@@ -120,15 +120,15 @@
       />
     </path>
   </g>
-  <g id="bid_leaf" style="transform-origin: 50% 100%">
+  <g id="bid_leaf" style="transform-origin: 50% 100%" opacity="0">
     <animate
       attributeName="opacity"
       values="0; 0; 1"
-      keyTimes="0 0.99 1"
+      keyTimes="0; 0.99; 1"
       keySplines="0 0.1 0.25 1; 0 0 0.8 1"
       calcMode="spline"
       dur="0.01s"
-      begin="closedSuitcase.begin"
+      begin="closedSuitcase.end"
       fill="freeze"
       repeatCount="1"
       id="opacityBigLeaf"
@@ -152,15 +152,15 @@
     <path d="M166.1,232.52c-3.41,9.36.47,19.35,0.47,19.35s9.39-5.18,12.79-14.53S178.89,218,178.89,218s-9.39,5.18-12.79,14.53" fill="#1553b7"/>
     <path d="M147.22,252.35c9.36,3.4,19.35-.47,19.35-0.47s-5.18-9.39-14.54-12.79-19.35.47-19.35,0.47,5.18,9.39,14.54,12.79" fill="#1553b7"/>
   </g>
-  <g id="small_leaf" style="transform-origin: 50% 100%">
+  <g id="small_leaf" style="transform-origin: 50% 100%" opacity="0">
     <animate
       attributeName="opacity"
       values="0; 0; 1"
-      keyTimes="0 0.99 1"
+      keyTimes="0; 0.99; 1"
       keySplines="0 0.1 0.25 1; 0 0 0.8 1"
       calcMode="spline"
       dur="0.01s"
-      begin="closedSuitcase.begin"
+      begin="closedSuitcase.end"
       fill="freeze"
       repeatCount="1"
       id="opacitySmallLeaf"
@@ -182,13 +182,18 @@
     <path d="M188.56,271.67a144.15,144.15,0,0,0-10.31,16.61" fill="none" stroke="#3b7bf2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
     <path d="M203.69,264.19c-6.17,7.08-16.19,8.44-16.19,8.44s0-10.11,6.16-17.18S209.85,247,209.85,247s0,10.11-6.16,17.19" fill="#76abff"/>
   </g>
-  <g id="hummingbird" style="transform-box: fill-box;">
-    <set
+  <g id="hummingbird" style="transform-box: fill-box;" opacity="0">
+    <animate
       attributeName="opacity"
-      to="1"
+      values="0; 0; 1"
+      keyTimes="0; 0.99; 1"
+      keySplines="0 0.1 0.25 1; 0 0 0.8 1"
+      calcMode="spline"
       dur="0.01s"
-      begin="closedSuitcase.begin"
-      id="opacityHummingbird"
+      begin="closedSuitcase.end"
+      fill="freeze"
+      repeatCount="1"
+      id="opacityFlowers"
     />
     <animateMotion
       values="-64, 75; 0, 0; -14 9; 0 0"
@@ -218,7 +223,7 @@
         attributeName="opacity"
         to="1"
         dur="0.01s"
-        begin="closedSuitcase.begin"
+        begin="closedSuitcase.end"
         id="opacityHummingbirdPath"
       />
       <animateTransform
@@ -234,15 +239,15 @@
     </path>
     <path d="M262.24,169.86l10.76,0a4.65,4.65,0,0,1,4.41-2.9,3.91,3.91,0,0,1,3.48,1.76,13.39,13.39,0,0,1,1.37,2.59c0.63,1.57,4,15.8,5.89,19.16,1.1,2,4.39,7.16,4.39,7.16a2.3,2.3,0,0,1,.31,1.15V208s-3.11-1.08-3.11-3.91v-6.53c-1.91.27-6-1.65-8.33-2.88a12.82,12.82,0,0,1-6.36-6.76,12.33,12.33,0,0,1-.11-9.16,7.13,7.13,0,0,0,.79-2.91c-0.06-1.14-1.39-2.72-2.18-4.05Z" fill="#fff"/>
   </g>
-  <line id="balloon_string" x1="107.65" y1="166.71" x2="107.65" y2="289.02" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2">
+  <line id="balloon_string" x1="107.65" y1="166.71" x2="107.65" y2="289.02" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" opacity="0" stroke-width="2">
     <animate
       attributeName="opacity"
       values="0; 0; 1"
-      keyTimes="0 0.99 1"
+      keyTimes="0; 0.99; 1"
       keySplines="0 0.1 0.25 1; 0 0 0.8 1"
       calcMode="spline"
       dur="0.01s"
-      begin="closedSuitcase.begin"
+      begin="closedSuitcase.end"
       fill="freeze"
       repeatCount="1"
       id="opacityBalloonString"
@@ -269,15 +274,15 @@
       repeatCount="1"
     />
   </line>
-  <g id="balloon" style="transform-box: fill-box; transform-origin: 50% 100%">
+  <g id="balloon" style="transform-box: fill-box; transform-origin: 50% 100%" opacity="0">
     <animate
       attributeName="opacity"
       values="0; 0; 1"
-      keyTimes="0 0.99 1"
+      keyTimes="0; 0.99; 1"
       keySplines="0 0.1 0.25 1; 0 0 0.8 1"
       calcMode="spline"
       dur="0.01s"
-      begin="closedSuitcase.begin"
+      begin="closedSuitcase.end"
       fill="freeze"
       repeatCount="1"
       id="opacityBalloon"
