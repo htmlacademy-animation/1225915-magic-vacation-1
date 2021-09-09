@@ -165,7 +165,7 @@
 
     @media (max-width: $tablet) and (orientation: portrait) {
       margin-left: 0;
-      padding-left: 1.5rem;
+      padding-left: 0rem;
     }
 
     .prizes__icon {
@@ -199,7 +199,7 @@
 
   &--codes {
     @media (max-width: $tablet) and (orientation: portrait) {
-      padding-left: 0.8rem;
+      padding-left: 0;
     }
 
     .prizes__icon {
@@ -222,6 +222,10 @@
       }
     }
   }
+}
+
+.prizes__item--codes .prizes__desc b {
+  width: 1.5em;
 }
 
 .prizes__icon {
