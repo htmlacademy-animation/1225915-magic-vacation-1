@@ -1,5 +1,6 @@
 import throttle from 'lodash/throttle';
 import timer, {clearTimer} from './timer.js';
+import PrizeCountAnimation from './prize-count-animation.js';
 
 export default class FullPageScroll {
   constructor() {
@@ -17,6 +18,8 @@ export default class FullPageScroll {
     this.previousScreen = 0;
     this.onScrollHandler = this.onScroll.bind(this);
     this.onUrlHashChengedHandler = this.onUrlHashChanged.bind(this);
+
+    this.prizeAnimationStart = false;
   }
 
   init() {
@@ -60,6 +63,14 @@ export default class FullPageScroll {
 
     if (this.previousScreen === this.GAME_SCREEN_INDEX) {
       clearTimer(this.GAMER_TIMER_INITIAL_VALUE);
+    }
+
+    if (this.activeScreen === this.PRIZES_SCREEN_INDEX) {
+      if (!this.prizeAnimationStart) {
+        this.prizeAnimationStart = true;
+        const prizesAnimation = new PrizeCountAnimation();
+        prizesAnimation.start();
+      }
     }
 
     if (this.previousScreen === this.STORY_SCREEN_INDEX && this.activeScreen === this.PRIZES_SCREEN_INDEX) {
