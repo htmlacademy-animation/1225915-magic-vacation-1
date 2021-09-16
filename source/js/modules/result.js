@@ -1,3 +1,7 @@
+import Scene2DSeaCalf from '../canvas/scene-2d-sea-calf.js';
+
+const resultScene = new Scene2DSeaCalf();
+
 export default () => {
   let showResultEls = document.querySelectorAll(`.js-show-result`);
   let results = document.querySelectorAll(`.screen--result`);
@@ -15,7 +19,10 @@ export default () => {
         targetEl[0].classList.add(`screen--show`);
         targetEl[0].classList.remove(`screen--hidden`);
 
-        if (target === `result` || target === `result2`) {
+        if (target === `result`) {
+          document.getElementById(`winTitleAnim`).beginElement();
+          resultScene.start();
+        } else if (target === `result`) {
           document.getElementById(`winTitleAnim`).beginElement();
         } else {
           document.getElementById(`looseTitleAnim`).beginElement();
